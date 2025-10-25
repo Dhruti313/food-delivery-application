@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      security-events: write # Required for dependency submission
 
     steps:
       - name: Checkout repository
