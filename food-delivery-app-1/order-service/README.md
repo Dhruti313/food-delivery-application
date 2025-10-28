@@ -95,17 +95,20 @@ docker logs -f order-service-container
 
 ## 🧪 API Endpoints
 
-| Method | Endpoint              | Description         |
-| ------ | --------------------- | ------------------- |
-| POST   | `/orders`             | Create a new order  |
-| GET    | `/orders/{id}`        | Get order by ID     |
-| GET    | `/orders`             | List all orders     |
-| PUT    | `/orders/{id}/status` | Update order status |
+| Method | Endpoint                                          | Description                |
+| ------ | ------------------------------------------------- | -------------------------- |
+| POST   | `/api/orders`                                     | Create a new order         |
+| GET    | `/api/orders/{orderId}`                           | Get order by ID            |
+| GET    | `/api/orders/user/{userId}`                       | Get orders by user ID      |
+| GET    | `/api/orders/customer/{customerId}`               | Get customer orders orders |
+| GET    | `/api/orders/restaurant/{restaurantId}`           | Get restaurant orders      |
+| PATCH  | `/api/orders/{orderId}/status?status=<newStatus>` | Update order status        |
+| DELETE | `/api/orders/{orderId}`                           | Cancel order               |
 
 Example:
 
 ```bash
-POST http://localhost:8081/orders
+POST http://localhost:8081/api/orders
 ```
 
 ---
